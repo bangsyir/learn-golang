@@ -1,0 +1,30 @@
+### request categories
+GET http://localhost:3000/api/categories HTTP/1.1
+Accept: : application/json
+
+### create category
+
+POST http://localhost:3000/api/categories HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Phone"
+}
+
+### update category
+PUT http://localhost:3000/api/categories/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name": "Gadget new"
+}
+
+### get categoryById
+GET http://localhost:3000/api/categories/1
+Accept: application/json
+
+### dete category by id
+DELETE http://localhost:3000/api/categories/1
+Accept: application/json
