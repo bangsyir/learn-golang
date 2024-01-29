@@ -10,7 +10,7 @@ Content-Type: application/json
 X-API-Key: RAHASIA
 
 {
-    "name": "Tablet"
+    "name": ""
 }
 
 ### update category
