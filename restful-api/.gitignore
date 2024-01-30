@@ -1,4 +1,3 @@
 docker/db-data
-docker/db-data-test
 docker/.env
 .vscode
