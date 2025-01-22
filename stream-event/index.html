@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>go event stream</title>
+    </head>
+    <body>
+        <p id="currentStatus"></p>
+        <h2>Real-time response :</h2>
+        <p id="resp"></p>
+
+        <script>
+            var sse = new EventSource("/events");
+            var currentStatus = document.getElementById("currentStatus");
+            var resp = document.getElementById("resp");
+
+            console.log(currentStatus);
+
+            sse.onopen = function () {
+                currentStatus.innerHTML = "open";
+            };
+            sse.onmessage = function (event) {
+                resp.innerHTML += event.data + " ";
+            };
+
+            sse.onerror = function (event) {
+                currentStatus.innerHTML = "close";
+                setTimeout(() => (resp.innerHTML = ""), 1000);
+            };
+        </script>
+    </body>
+</html>
