@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"go-channels/deep"
 	"go-channels/gemini"
 	"go-channels/grok"
 )
@@ -19,6 +20,10 @@ func main() {
 	switch fromSource {
 	case "gemini":
 		gemini.FromGemini()
+	case "deep":
+		deep.DeepRun()
+	case "deep-jobs":
+		deep.RunJobs()
 	default:
 		grok.FromGrok()
 	}
