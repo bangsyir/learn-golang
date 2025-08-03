@@ -26,8 +26,8 @@ func events(w http.ResponseWriter, r *http.Request) {
 
 	for _, token := range tokens {
 		content := fmt.Sprintf("data: %s\n\n", string(token))
-		// w.Write([]byte(content))
-		fmt.Fprintf(w, "%s\n", content)
+		w.Write([]byte(content))
+		// fmt.Fprintf(w, "%s\n", content)
 		w.(http.Flusher).Flush()
 
 		// intentional wait
